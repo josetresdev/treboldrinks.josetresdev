@@ -40,41 +40,6 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-    <!-- Loader de carga -->
-    <div id="loader" aria-live="polite" role="status">
-        <img src="img/treboldrinksneo.webp" alt="Cargando Trebol Drinks, por favor espera..." width="150" height="150" loading="lazy">
-    </div>
-    <!-- Mensaje de advertencia de prohibición de consumo menores de edad Ley 124 de 1994. -->
-    <div id="ageModal" class="modal-display-none" role="dialog" aria-labelledby="ageModalTitle" aria-describedby="ageModalDesc">
-        <div class="modal-content">
-            <div class="w-100">
-                <img class="img-age-validation" src="img/sellocorporativo.webp" alt="Sello corporativo de Trebol Drinks" width="150" height="150" />
-            </div>
-            <h2 id="ageModalTitle" class="title-text-validation-age">
-                Confirmación de edad. 
-                <img class="img-icon-age" src="img/age.webp" alt="Ícono de restricción de edad" width="24" height="24">
-            </h2>
-            <p id="ageModalDesc" class="p-text-validation-age">
-                El consumo de alcohol es exclusivo para mayores de 18 años, según lo establecido en la Ley 124 de 1994 de Colombia.  
-                Al continuar, confirmas que eres mayor de edad y aceptas nuestra <a href="/politica-consumo-responsable" class="a-contact-age">política de consumo responsable</a>.
-            </p>
-            <div class="text-center">
-                <button class="btn-validation-age" onclick="acceptAge()">
-                    Soy mayor de edad 
-                    <img class="img-icon-check" src="img/comprobado.webp" alt="Verificado" width="24" height="24">
-                </button>
-                <button class="btn-validation-age" onclick="denyAccess()">
-                    No soy mayor de edad 
-                    <img class="img-icon-denied" src="img/cancelar.webp" alt="Acceso denegado" width="24" height="24">
-                </button>
-                <p class="p-contact-age">
-                    Si tienes dudas, contáctanos en  
-                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>  
-                    <a href="mailto:soporte@treboldrinks.com" class="a-contact-age">contacto@treboldrinks.com</a>.
-                </p>
-            </div>
-        </div>
-    </div>    
     <div id="content">
         <!-- Aviso legal sobre consumo de alcohol -->
         <div class="header-description-policy" role="contentinfo">
@@ -94,43 +59,15 @@
                     </div>
                     <div>
                         <h1 class="title-navbar">
-                            Licorera Premium 
+                            Tienda de Licores Online
                             <img class="icon-premium-title" src="img/premium.webp" alt="Licorera Premium" width="24" height="24">
                         </h1>
-                    </div>
-                    <div class="align-items-center">
-                        <div>
-                            <img class="free-hours-img" src="img/free_hours.webp" alt="Abierto las 24 horas" width="100" height="50">
-                        </div>
                     </div>
                 </div>
             </div>
         </header>
-        <button class="boton-ciudad" onclick="mostrarSelectorCiudad()" aria-label="Selecciona tu ciudad">
-            <span aria-hidden="true">📍</span> <span>Elige tu ciudad</span>
-        </button>
-        <!-- Fondo difuminado cuando aparece el modal -->
-        <div class="fondo-transparente" id="fondoTransparente"></div>
-        <!-- Modal de selección de ciudad -->
-        <div class="card-ciudad" id="selectorCiudad" role="dialog" aria-labelledby="tituloCiudad" aria-modal="true">
-            <button class="boton-cerrar" onclick="cerrarSelectorCiudad()" aria-label="Cerrar selección de ciudad"><i class="fa-solid fa-xmark"></i></button>
-            <h3 id="tituloCiudad">Selecciona tu ciudad para ver disponibilidad</h3>
-            <button class="boton-seleccionar" onclick="seleccionarCiudad('Pereira')" aria-label="Seleccionar Pereira">Pereira</button>
-            <button class="boton-seleccionar" onclick="seleccionarCiudad('Dosquebradas')" aria-label="Seleccionar Dosquebradas">Dosquebradas</button>
-        </div>
-        <a href="/carta" class="btn-flotante" aria-label="Ver catálogo de productos" rel="nofollow">
-            <span>🛒</span> Ver catálogo
-        </a>        
-        <a class="whatsapp-button" href="https://wa.link/6zn2pu" target="_blank" rel="noopener noreferrer" aria-label="Chatea con nosotros en WhatsApp">
-            <img class="img-icon-wpp-float" src="img/whatsapp_icon.webp" alt="Ícono de WhatsApp - Chatea con nosotros">
-        </a>
         <main class="bg-icon-set">
             <section class="container">
-                <div class="row pb-5">
-                    <div class="col-12">
-                        <img class="img-category-banner mt-3" src="img/banner_principal.webp" alt="Promoción de licores premium en oferta" class="img-fluid w-100">
-                    </div>
-                </div> 
                 <h3 class="text-center mb-4 title-products-sections">Licores Destacados
                     <img class="img-icon-best-title" src="img/insignia.webp" alt="Insignia de licores premium">
                 </h3>
@@ -406,38 +343,6 @@
                                         <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt=""> 
                                     </a>
                                 </section>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="container container-payment-methods my-5" aria-labelledby="payment-methods-title">
-                <div class="row align-items-center">
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-4 mb-md-0">
-                        <h2 id="payment-methods-title" class="title-payment-methods">Métodos de pago</h2>
-                        <p class="description-payment-methods">
-                            En nuestra tienda aceptamos una amplia variedad de métodos de pago para tu comodidad. Ya sea que prefieras tarjeta de crédito, débito o plataformas digitales, tienes la confianza de realizar tus compras de forma segura.
-                        </p>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center">
-                        <div class="row text-center">
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
-                                <img class="img-icon-payment-method img-fluid" src="img/visa.webp" alt="Pago con tarjeta Visa" loading="lazy">
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
-                                <img class="img-icon-payment-method img-fluid" src="img/ach.webp" alt="Pago mediante ACH" loading="lazy">
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
-                                <img class="img-icon-payment-method img-fluid" src="img/bancolombia.webp" alt="Pago con Bancolombia" loading="lazy">
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
-                                <img class="img-icon-payment-method img-fluid" src="img/daviplata.webp" alt="Pago con Daviplata" loading="lazy">
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
-                                <img class="img-icon-payment-method img-fluid" src="img/nequi.webp" alt="Pago con Nequi" loading="lazy">
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
-                                <img class="img-icon-payment-method img-fluid" src="img/pse.webp" alt="Pago con PSE" loading="lazy">
                             </div>
                         </div>
                     </div>
