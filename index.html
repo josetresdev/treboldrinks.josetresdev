@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- SEO Básico -->
     <title>Trebol Drinks | Tienda Online de Bebidas Premium</title>
     <meta name="description" content="Compra licores premium y bebidas exclusivas en Trebol Drinks. Disfruta de entrega rápida a domicilio y ofertas especiales en whisky, ron, tequila y más. ¡Haz tu pedido online hoy!">
     <meta name="keywords" content="licores premium, vinos selectos, whisky de calidad, ron añejo, tequila artesanal, cervezas importadas, bodega virtual, compra de licores online, bebidas exclusivas, tienda de licores online">  
     <meta name="author" content="Trebol Drinks | Tienda de Licores Premium">
+    <!-- Open Graph para redes sociales -->
     <meta property="og:title" content="Trebol Drinks | Bodega de Licores Premium">  
     <meta property="og:description" content="Descubre nuestra exclusiva selección de licores premium. Compra en línea con envío rápido y seguro. ¡Brinda con lo mejor!">  
     <meta property="og:image" content="https://treboldrinks.co/img/og-image.jpg">  
@@ -16,25 +18,65 @@
     <meta property="og:type" content="website">  
     <meta property="og:site_name" content="Trebol Drinks">  
     <meta property="og:locale" content="es_ES">  
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">  
     <meta name="twitter:site" content="@treboldrinksco">  
     <meta name="twitter:title" content="Trebol Drinks | Bodega de Licores Premium">  
     <meta name="twitter:description" content="Compra licores premium, vinos selectos y cervezas artesanales. Envío rápido y seguro a domicilio. ¡Descubre nuestra selección exclusiva!">  
     <meta name="twitter:image" content="https://treboldrinks.co/img/og-image.jpg">  
     <meta name="twitter:image:alt" content="Selección premium de licores en Trebol Drinks">  
+    <!-- Preconexión a recursos externos para mejorar velocidad -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Icono del sitio -->
     <link rel="icon" href="icon/favicon.ico" type="image/x-icon">
+    <!-- Fuentes de Google -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- CSS de Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS de FontAwesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+    <!-- Loader de carga -->
     <div id="loader" aria-live="polite" role="status">
         <img src="img/treboldrinksneo.webp" alt="Cargando Trebol Drinks, por favor espera..." width="150" height="150" loading="lazy">
     </div>
+    <!-- Mensaje de advertencia de prohibición de consumo menores de edad Ley 124 de 1994. -->
+    <div id="ageModal" class="modal-display-none" role="dialog" aria-labelledby="ageModalTitle" aria-describedby="ageModalDesc">
+        <div class="modal-content">
+            <div class="w-100">
+                <img class="img-age-validation" src="img/sellocorporativo.webp" alt="Sello corporativo de Trebol Drinks" width="150" height="150" />
+            </div>
+            <h2 id="ageModalTitle" class="title-text-validation-age">
+                Confirmación de edad. 
+                <img class="img-icon-age" src="img/age.webp" alt="Ícono de restricción de edad" width="24" height="24">
+            </h2>
+            <p id="ageModalDesc" class="p-text-validation-age">
+                El consumo de alcohol es exclusivo para mayores de 18 años, según lo establecido en la Ley 124 de 1994 de Colombia.  
+                Al continuar, confirmas que eres mayor de edad y aceptas nuestra <a href="/politica-consumo-responsable" class="a-contact-age">política de consumo responsable</a>.
+            </p>
+            <div class="text-center">
+                <button class="btn-validation-age" onclick="acceptAge()">
+                    Soy mayor de edad 
+                    <img class="img-icon-check" src="img/comprobado.webp" alt="Verificado" width="24" height="24">
+                </button>
+                <button class="btn-validation-age" onclick="denyAccess()">
+                    No soy mayor de edad 
+                    <img class="img-icon-denied" src="img/cancelar.webp" alt="Acceso denegado" width="24" height="24">
+                </button>
+                <p class="p-contact-age">
+                    Si tienes dudas, contáctanos en  
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>  
+                    <a href="mailto:soporte@treboldrinks.com" class="a-contact-age">contacto@treboldrinks.com</a>.
+                </p>
+            </div>
+        </div>
+    </div>    
     <div id="content">
+        <!-- Aviso legal sobre consumo de alcohol -->
         <div class="header-description-policy" role="contentinfo">
             <p class="mb-0 text-description-policy-header">
                 <i class="fas fa-info-circle" aria-hidden="true"></i> 
@@ -46,8 +88,13 @@
             <div class="container">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
+                        <a href="/" class="text-decoration-none" aria-label="Inicio Trebol Drinks">
+                            <img src="img/treboldrinksneo.webp" alt="Trebol Drinks - Tienda de Licores" class="navbar-logo" width="150" height="50" loading="eager"/>
+                        </a>
+                    </div>
+                    <div>
                         <h1 class="title-navbar">
-                            Tienda Online de Licores
+                            Licorera Premium 
                             <img class="icon-premium-title" src="img/premium.webp" alt="Licorera Premium" width="24" height="24">
                         </h1>
                     </div>
@@ -59,10 +106,136 @@
                 </div>
             </div>
         </header>
+        <button class="boton-ciudad" onclick="mostrarSelectorCiudad()" aria-label="Selecciona tu ciudad">
+            <span aria-hidden="true">📍</span> <span>Elige tu ciudad</span>
+        </button>
+        <!-- Fondo difuminado cuando aparece el modal -->
+        <div class="fondo-transparente" id="fondoTransparente"></div>
+        <!-- Modal de selección de ciudad -->
+        <div class="card-ciudad" id="selectorCiudad" role="dialog" aria-labelledby="tituloCiudad" aria-modal="true">
+            <button class="boton-cerrar" onclick="cerrarSelectorCiudad()" aria-label="Cerrar selección de ciudad"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="tituloCiudad">Selecciona tu ciudad para ver disponibilidad</h3>
+            <button class="boton-seleccionar" onclick="seleccionarCiudad('Pereira')" aria-label="Seleccionar Pereira">Pereira</button>
+            <button class="boton-seleccionar" onclick="seleccionarCiudad('Dosquebradas')" aria-label="Seleccionar Dosquebradas">Dosquebradas</button>
+        </div>
+        <a href="/carta" class="btn-flotante" aria-label="Ver catálogo de productos" rel="nofollow">
+            <span>🛒</span> Ver catálogo
+        </a>        
+        <a class="whatsapp-button" href="https://wa.link/6zn2pu" target="_blank" rel="noopener noreferrer" aria-label="Chatea con nosotros en WhatsApp">
+            <img class="img-icon-wpp-float" src="img/whatsapp_icon.webp" alt="Ícono de WhatsApp - Chatea con nosotros">
+        </a>
         <main class="bg-icon-set">
             <section class="container">
                 <div class="row pb-5">
+                    <div class="col-12">
+                        <img class="img-category-banner mt-3" src="img/banner_principal.webp" alt="Promoción de licores premium en oferta" class="img-fluid w-100">
+                    </div>
                 </div> 
+                <h3 class="text-center mb-4 title-products-sections">Licores Destacados
+                    <img class="img-icon-best-title" src="img/insignia.webp" alt="Insignia de licores premium">
+                </h3>
+                <section class="row justify-content-center">
+                    <article class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card card-product">
+                            <img class="img-card-product" src="img/aguardiente_amarillo.webp" class="card-img-top" alt="Botella de Aguardiente Amarillo 750ml">
+                            <div class="card-body">
+                                <h3 class="card-title title-product-card">Aguardiente Amarillo</h3>
+                                <p class="card-text description-card-text mt-0 mb-0"><strong>Referencia:</strong> Amarillo de Manzanares 750ml</p>
+                                <ul class="list-unstyled liquor-characteristics description-card-text mb-0">
+                                    <li><strong>■ Alcohol:</strong> 24% Vol.</li>
+                                    <li><strong>■ Origen:</strong> Colombia</li>
+                                    <li><strong>■ Capacidad:</strong> 750ml</li>
+                                    <li><strong>■ Registro INVIMA:</strong> RSIA16I130713</li>
+                                </ul>
+                                <p class="fw-bold price-card-product mb-3 mt-3">$59.900 COP</p>
+                                <section class="text-center">
+                                    <a href="#" class="btn-cart-add-product-card" onclick="sendWhatsApp(this)" 
+                                    data-name="Aguardiente Amarillo" 
+                                    data-size="750ml" 
+                                    data-price="59.900">
+                                        🛒 ¡Pedir ahora! 💰
+                                        <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt="Icono de WhatsApp para pedidos"> 
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card card-product">
+                            <img class="img-card-product" src="img/ron_medellin_botella.webp" class="card-img-top" alt="Botella de Ron Medellín 3 Años 750ml">
+                            <div class="card-body">
+                                <h3 class="card-title title-product-card">Ron Medellín Tres Años</h3>
+                                <p class="card-text description-card-text mt-0 mb-0"><strong>Referencia:</strong> Ron Medellín Añejo 3 Años 750ml</p>
+                                <ul class="list-unstyled liquor-characteristics description-card-text mb-0">
+                                    <li><strong>■ Alcohol:</strong> 35% Vol.</li>
+                                    <li><strong>■ Origen:</strong> Colombia</li>
+                                    <li><strong>■ Capacidad:</strong> 750ml</li>
+                                    <li><strong>■ Registro INVIMA:</strong> RSIA16I130814</li>
+                                </ul>
+                                <p class="fw-bold price-card-product mb-3 mt-3">$63.500 COP</p>
+                                <section class="text-center">
+                                    <a href="#" class="btn-cart-add-product-card" onclick="sendWhatsApp(this)" 
+                                    data-name="Ron Medellín Tres Años" 
+                                    data-size="750ml" 
+                                    data-price="63.500">
+                                        🛒 ¡Pedir ahora! 💰
+                                        <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt="Icono de WhatsApp para pedidos"> 
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card card-product">
+                            <img class="img-card-product" src="img/aguardiente_antioquenio_botella.webp" class="card-img-top" alt="Botella de Aguardiente Antioqueño Azul 750ml">
+                            <div class="card-body">
+                                <h3 class="card-title title-product-card">Aguardiente Antioqueño Azul</h3>
+                                <p class="card-text description-card-text mt-0 mb-0"><strong>Referencia:</strong> Aguardiente Antioqueño Azul 750ml</p>
+                                <ul class="list-unstyled liquor-characteristics description-card-text mb-0">
+                                    <li><strong>■ Alcohol:</strong> 29% Vol.</li>
+                                    <li><strong>■ Origen:</strong> Colombia</li>
+                                    <li><strong>■ Capacidad:</strong> 750ml</li>
+                                    <li><strong>■ Registro INVIMA:</strong> RSIA16I130915</li>
+                                </ul>
+                                <p class="fw-bold price-card-product mb-3 mt-3">$57.900 COP</p>
+                                <section class="text-center">
+                                    <a href="#" class="btn-cart-add-product-card" onclick="sendWhatsApp(this)" 
+                                    data-name="Aguardiente Antioqueño Azul" 
+                                    data-size="750ml" 
+                                    data-price="57.900">
+                                        🛒 ¡Pedir ahora! 💰
+                                        <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt="Icono de WhatsApp para pedidos"> 
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card card-product">
+                            <img class="img-card-product" src="img/ron_caldas_tradicional.webp" class="card-img-top" alt="Botella de Ron Viejo de Caldas 5 Años 750ml">
+                            <div class="card-body">
+                                <h3 class="card-title title-product-card">Ron Viejo de Caldas Tradicional</h3>
+                                <p class="card-text description-card-text mt-0 mb-0"><strong>Referencia:</strong> Ron Viejo de Caldas 5 Años 750ml</p>
+                                <ul class="list-unstyled liquor-characteristics description-card-text mb-0">
+                                    <li><strong>■ Alcohol:</strong> 35% Vol.</li>
+                                    <li><strong>■ Origen:</strong> Colombia</li>
+                                    <li><strong>■ Capacidad:</strong> 750ml</li>
+                                    <li><strong>■ Registro INVIMA:</strong> RSIA16I131016</li>
+                                </ul>
+                                <p class="fw-bold price-card-product mb-3 mt-3">$64.500 COP</p>
+                                <section class="text-center">
+                                    <a href="#" class="btn-cart-add-product-card" onclick="sendWhatsApp(this)" 
+                                    data-name="Ron Viejo de Caldas 5 Años" 
+                                    data-size="750ml" 
+                                    data-price="64.500">
+                                        🛒 ¡Pedir ahora! 💰
+                                        <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt="Icono de WhatsApp para pedidos"> 
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+                    </article>
+                </section>
             </section>
             <section class="container-online-store my-5">
                 <h2 class="text-center mb-4 title-online-store">
@@ -121,9 +294,297 @@
                     </article>
                 </section>   
             </section>
+            <section class="container my-3">
+                <h2 class="text-center mb-4 title-products-sections">Licores premium <img class="img-icon-promo-title" src="img/premium_icon.webp" alt=""></h2>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card card-product">
+                            <img class="img-card-product" src="img/botella_buchanans.webp" class="card-img-top" alt="Producto 1">
+                            <div class="card-body">
+                                <div class="height-title-card-product">
+                                    <h5 class="card-title title-product-card">Buchanan's Deluxe</h5>
+                                </div>
+                                <div class="height-text-card-product">
+                                    <p class="card-text description-card-text mt-0 mb-0">
+                                        <strong>Referencia: </strong>Buchanan's Deluxe 12 Años Botella
+                                    </p>
+                                    <ul class="list-unstyled liquor-characteristics description-card-text mb-0">
+                                        <li><strong>■ Contenido de alcohol:</strong> 40% Vol.</li>
+                                        <li><strong>■ Origen:</strong> Escocia</li>
+                                        <li><strong>■ Capacidad:</strong> 750ml</li>
+                                        <li><strong>■ Registro INVIMA:</strong> 1256-7890</li>
+                                    </ul>
+                                </div>                                
+                                <p class="fw-bold price-card-product mb-3 mt-3">$206.000 COP</p>
+                                <section class="text-center">
+                                    <a href="https://wa.me/?text=Quiero%20comprar%20Buchanan's%20Deluxe%20de%20750ml" target="_blank" class="btn-cart-add-product-card">
+                                        🛒 ¡Pedir ahora! 💰
+                                        <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt=""> 
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card card-product">
+                            <img class="img-card-product" src="img/black_label.webp" class="card-img-top" alt="Producto 2">
+                            <div class="card-body">
+                                <div class="height-title-card-product">
+                                    <h5 class="card-title title-product-card">Whisky Johnnie Walker</h5>
+                                </div>
+                                <div class="height-text-card-product">
+                                    <p class="card-text description-card-text mt-0 mb-0">
+                                        <strong>Referencia: </strong>Johnnie Walker Black Label 12 Años Botella
+                                    </p>
+                                    <ul class="list-unstyled liquor-characteristics description-card-text mb-0">
+                                        <li><strong>■ Contenido de alcohol:</strong> 40% Vol.</li>
+                                        <li><strong>■ Origen:</strong> Escocia</li>
+                                        <li><strong>■ Capacidad:</strong> 750ml</li>
+                                        <li><strong>■ Registro INVIMA:</strong> 1256-7890</li>
+                                    </ul>
+                                </div>                                
+                                <p class="fw-bold price-card-product mb-3 mt-3">$130.000 COP</p>
+                                <section class="text-center">
+                                    <a href="https://wa.me/?text=Quiero%20comprar%20Johnnie%20Walker%20Black%20Label%20de%20750ml" target="_blank" class="btn-cart-add-product-card">
+                                        🛒 ¡Pedir ahora! 💰
+                                        <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt=""> 
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card card-product">
+                            <img class="img-card-product" src="img/botella_something.webp" class="card-img-top" alt="Producto 3">
+                            <div class="card-body">
+                                <div class="height-title-card-product">
+                                    <h5 class="card-title title-product-card">Whisky Something Special.</h5>
+                                </div>
+                                <div class="height-text-card-product">
+                                    <p class="card-text description-card-text mt-0 mb-0">
+                                        <strong>Referencia: </strong>Something Special Botella
+                                    </p>
+                                    <ul class="list-unstyled liquor-characteristics description-card-text mb-0">
+                                        <li><strong>■ Contenido de alcohol:</strong> 40% Vol.</li>
+                                        <li><strong>■ Origen:</strong> Escocia</li>
+                                        <li><strong>■ Capacidad:</strong> 750ml</li>
+                                        <li><strong>■ Registro INVIMA:</strong> 9876-5432</li>
+                                    </ul>
+                                </div>                                
+                                <p class="fw-bold price-card-product mb-3 mt-3">$110.900 COP</p>
+                                <section class="text-center">
+                                    <a href="https://wa.me/?text=Quiero%20comprar%20Something%20Special%20de%20750ml" target="_blank" class="btn-cart-add-product-card">
+                                        🛒 ¡Pedir ahora! 💰
+                                        <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt=""> 
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card card-product">
+                            <img class="img-card-product" src="img/1800_special.webp" class="card-img-top" alt="Producto 4">
+                            <div class="card-body">
+                                <div class="height-title-card-product">
+                                    <h5 class="card-title title-product-card">Tequila 1800 Añejo</h5>
+                                </div>
+                                <div class="height-text-card-product">
+                                    <p class="card-text description-card-text mt-0 mb-0">
+                                        <strong>Referencia: </strong>Tequila 1800 Añejo Botella
+                                    </p>
+                                    <ul class="list-unstyled liquor-characteristics description-card-text mb-0">
+                                        <li><strong>■ Contenido de alcohol:</strong> 40% Vol.</li>
+                                        <li><strong>■ Origen:</strong> México</li>
+                                        <li><strong>■ Capacidad:</strong> 750ml</li>
+                                        <li><strong>■ Registro INVIMA:</strong> 1234-5678</li>
+                                    </ul>
+                                </div>                                
+                                <p class="fw-bold price-card-product mb-3 mt-3">$54.900 COP</p>
+                                <section class="text-center">
+                                    <a href="https://wa.me/?text=Quiero%20comprar%20Tequila%201800%20Añejo%20de%20750ml" target="_blank" class="btn-cart-add-product-card">
+                                        🛒 ¡Pedir ahora! 💰
+                                        <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt=""> 
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container container-payment-methods my-5" aria-labelledby="payment-methods-title">
+                <div class="row align-items-center">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-4 mb-md-0">
+                        <h2 id="payment-methods-title" class="title-payment-methods">Métodos de pago</h2>
+                        <p class="description-payment-methods">
+                            En nuestra tienda aceptamos una amplia variedad de métodos de pago para tu comodidad. Ya sea que prefieras tarjeta de crédito, débito o plataformas digitales, tienes la confianza de realizar tus compras de forma segura.
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center">
+                        <div class="row text-center">
+                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
+                                <img class="img-icon-payment-method img-fluid" src="img/visa.webp" alt="Pago con tarjeta Visa" loading="lazy">
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
+                                <img class="img-icon-payment-method img-fluid" src="img/ach.webp" alt="Pago mediante ACH" loading="lazy">
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
+                                <img class="img-icon-payment-method img-fluid" src="img/bancolombia.webp" alt="Pago con Bancolombia" loading="lazy">
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
+                                <img class="img-icon-payment-method img-fluid" src="img/daviplata.webp" alt="Pago con Daviplata" loading="lazy">
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
+                                <img class="img-icon-payment-method img-fluid" src="img/nequi.webp" alt="Pago con Nequi" loading="lazy">
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
+                                <img class="img-icon-payment-method img-fluid" src="img/pse.webp" alt="Pago con PSE" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container my-3">
+                <h2 class="text-center mb-4 title-products-sections">Cervezas
+                    <img class="img-icon-promo-title" src="img/beer_icon.webp" alt="Icono de cerveza">
+                </h2>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card card-product">
+                            <img class="img-card-product" src="img/club_dorada_lata.webp" class="card-img-top" alt="Cerveza Club Colombia Dorada Lata">
+                            <div class="card-body">
+                                <div class="height-title-card-product">
+                                    <h5 class="card-title title-product-card">Club Colombia Dorada (Lata)</h5>
+                                </div>
+                                <div class="height-text-card-product">
+                                    <p class="card-text description-card-text mt-0 mb-0">
+                                        <strong>Referencia: </strong> Club Colombia Dorada Lata 330ml
+                                    </p>
+                                    <ul class="list-unstyled liquor-characteristics description-card-text mb-0">
+                                        <li><strong>■ Contenido de alcohol:</strong> 4.7% Vol.</li>
+                                        <li><strong>■ Origen:</strong> Colombia</li>
+                                        <li><strong>■ Capacidad:</strong> 330ml</li>
+                                        <li><strong>■ Registro INVIMA:</strong> 1234-5678</li>
+                                    </ul>
+                                </div>
+                                <p class="fw-bold price-card-product mb-3 mt-3">$4.500 COP</p>
+                                <section class="text-center">
+                                    <a href="#" class="btn-cart-add-product-card" onclick="sendWhatsApp(this)" 
+                                    data-name="Club Colombia Dorada Lata" 
+                                    data-size="330ml" 
+                                    data-price="4500">
+                                        🛒 ¡Pedir ahora! 💰
+                                        <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt="Icono de WhatsApp para pedidos">
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card card-product">
+                            <img class="img-card-product" src="img/cerveza_budweizer_lata_six.webp" class="card-img-top" alt="Budweiser Sixpack Lata">
+                            <div class="card-body">
+                                <div class="height-title-card-product">
+                                    <h5 class="card-title title-product-card">Budweiser Sixpack (Lata)</h5>
+                                </div>
+                                <div class="height-text-card-product">
+                                    <p class="card-text description-card-text mt-0 mb-0">
+                                        <strong>Referencia: </strong> Budweiser Sixpack Lata 355ml
+                                    </p>
+                                    <ul class="list-unstyled liquor-characteristics description-card-text mb-0">
+                                        <li><strong>■ Contenido de alcohol:</strong> 5% Vol.</li>
+                                        <li><strong>■ Origen:</strong> Estados Unidos</li>
+                                        <li><strong>■ Capacidad:</strong> 6x355ml</li>
+                                        <li><strong>■ Registro INVIMA:</strong> 8765-4321</li>
+                                    </ul>
+                                </div>
+                                <p class="fw-bold price-card-product mb-3 mt-3">$28.000 COP</p>
+                                <section class="text-center">
+                                    <a href="#" class="btn-cart-add-product-card" onclick="sendWhatsApp(this)" 
+                                    data-name="Budweiser Sixpack Lata" 
+                                    data-size="355ml" 
+                                    data-price="28000">
+                                        🛒 ¡Pedir ahora! 💰
+                                        <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt="Icono de WhatsApp para pedidos">
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card card-product">
+                            <img class="img-card-product" src="img/cerveza_corona_botella_six.webp" class="card-img-top" alt="Corona Extra Sixpack Botellas">
+                            <div class="card-body">
+                                <div class="height-title-card-product">
+                                    <h5 class="card-title title-product-card">Corona Extra Sixpack (Botella)</h5>
+                                </div>
+                                <div class="height-text-card-product">
+                                    <p class="card-text description-card-text mt-0 mb-0">
+                                        <strong>Referencia: </strong> Corona Extra Sixpack Botellas 355ml
+                                    </p>
+                                    <ul class="list-unstyled liquor-characteristics description-card-text mb-0">
+                                        <li><strong>■ Contenido de alcohol:</strong> 4.5% Vol.</li>
+                                        <li><strong>■ Origen:</strong> México</li>
+                                        <li><strong>■ Capacidad:</strong> 6x355ml</li>
+                                        <li><strong>■ Registro INVIMA:</strong> 1234-9876</li>
+                                    </ul>
+                                </div>
+                                <p class="fw-bold price-card-product mb-3 mt-3">$28.500 COP</p>
+                                <section class="text-center">
+                                    <a href="#" class="btn-cart-add-product-card" onclick="sendWhatsApp(this)" 
+                                    data-name="Corona Extra Sixpack Botella" 
+                                    data-size="355ml" 
+                                    data-price="28500">
+                                        🛒 ¡Pedir ahora! 💰
+                                        <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt="Icono de WhatsApp para pedidos">
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card card-product">
+                            <img class="img-card-product" src="img/aguila_lata.webp" class="card-img-top" alt="Aguila Lata">
+                            <div class="card-body">
+                                <div class="height-title-card-product">
+                                    <h5 class="card-title title-product-card">Aguila (Lata)</h5>
+                                </div>
+                                <div class="height-text-card-product">
+                                    <p class="card-text description-card-text mt-0 mb-0">
+                                        <strong>Referencia: </strong> Aguila Lata 330ml
+                                    </p>
+                                    <ul class="list-unstyled liquor-characteristics description-card-text mb-0">
+                                        <li><strong>■ Contenido de alcohol:</strong> 4.2% Vol.</li>
+                                        <li><strong>■ Origen:</strong> Colombia</li>
+                                        <li><strong>■ Capacidad:</strong> 330ml</li>
+                                        <li><strong>■ Registro INVIMA:</strong> 9876-1234</li>
+                                    </ul>
+                                </div>
+                                <p class="fw-bold price-card-product mb-3 mt-3">$5.500 COP</p>
+                                <section class="text-center">
+                                    <a href="#" class="btn-cart-add-product-card" onclick="sendWhatsApp(this)" 
+                                    data-name="Aguila Lata" 
+                                    data-size="330ml" 
+                                    data-price="5500">
+                                        🛒 ¡Pedir ahora! 💰
+                                        <img class="icon-whatsapp-card-products" src="img/whatsapp_card_product_icon.webp" alt="Icono de WhatsApp para pedidos">
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>   
             <footer class="bg-footer text-white py-4">
                 <div class="container">
                     <div class="row text-center">
+                        <!-- Logo -->
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2 m-auto">
+                            <a href="/">
+                                <img class="logo-footer m-auto img-fluid" src="img/treboldrinksneo.webp" alt="Logo">
+                            </a>
+                        </div>
+            
+                        <!-- Cuarto 1 - Información sobre la empresa -->
                         <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2 mb-4">
                             <h5 class="title-items-footer">Acerca de nosotros</h5>
                             <ul class="list-unstyled">
@@ -133,6 +594,7 @@
                             </ul>
                         </div>
             
+                        <!-- Cuarto 2 - Servicio al Cliente -->
                         <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2 mb-4">
                             <h5 class="title-items-footer">Servicio al cliente</h5>
                             <ul class="list-unstyled">
@@ -142,6 +604,7 @@
                             </ul>
                         </div>
             
+                        <!-- Cuarto 3 - Productos -->
                         <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2 mb-4">
                             <h5 class="title-items-footer">Productos</h5>
                             <ul class="list-unstyled">
@@ -151,15 +614,31 @@
                             </ul>
                         </div>
             
+                        <!-- Cuarto 4 - Contacto -->
                         <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2 mb-4">
                             <h5 class="title-items-footer">Contacto</h5>
                             <ul class="list-unstyled">
                                 <li><span class="items-footer">Contáctanos</span></li>
                                 <li><span class="items-footer">Ubicación</span></li>
                                 <li><span class="items-footer">FAQ</span></li>
+                                <li>
+                                    <span class="items-footer">
+                                        <a href="mailto:contacto@treboldrinks.co" class="a-contact-footer">
+                                            <i class="fas fa-envelope"></i> contacto@treboldrinks.co
+                                        </a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="items-footer">
+                                        <a href="https://wa.me/573103668731" target="_blank" class="a-contact-footer">
+                                            <i class="fab fa-whatsapp"></i> WhatsApp: 3103668731
+                                        </a>
+                                    </span>
+                                </li>
                             </ul>
                         </div>
             
+                        <!-- Cuarto 5 - Redes sociales -->
                         <div class="col-12 col-sm-12 col-md-2 mb-4">
                             <h5 class="title-items-footer">Síguenos</h5>
                             <div class="d-flex justify-content-center gap-2">
